@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learner - Online Course Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brandBlue: '#3b25e6',
+                        brandPurple: '#7022e3',
+                        brandLight: '#f5f7ff',
+                        textDark: '#1e1e2d',
+                        textGray: '#6b7280'
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(135deg, #3017a1 0%, #462dd0 50%, #8757eb 100%)',
+                        'brands-gradient': 'linear-gradient(90deg, #5116de 0%, #631fe5 50%, #8949f0 100%)',
+                        'feature-gradient': 'linear-gradient(135deg, #448cfb 0%, #3521d9 60%, #681deb 100%)',
+                        'newsletter-gradient': 'linear-gradient(90deg, #7c9aff 0%, #904bfc 50%, #d43bdf 100%)',
+                        'footer-gradient': 'linear-gradient(180deg, #9955ed 0%, #3e4df6 100%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-textDark antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="bg-white px-6 lg:px-24 py-4 flex items-center justify-between border-b border-gray-100 relative z-50">
+        <div class="flex items-center gap-2">
+            <div class="flex">
+                <div class="w-4 h-4 rounded-full bg-green-400 opacity-80 -mr-1"></div>
+                <div class="w-4 h-4 rounded-full bg-blue-500 opacity-80"></div>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-gray-800">Learner</span>
+        </div>
+        
+        <div class="hidden md:flex space-x-10 text-sm font-medium">
+            <a href="#" class="text-gray-900 hover:text-brandBlue">Home</a>
+            <a href="#" class="text-gray-500 hover:text-brandBlue">About</a>
+            <a href="#" class="text-gray-500 hover:text-brandBlue">Courses</a>
+            <a href="#" class="text-gray-500 hover:text-brandBlue">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <div class="hidden md:flex space-x-4 text-gray-500">
+                <button class="hover:text-brandBlue"><i class="fas fa-shopping-cart"></i></button>
+                <button class="hover:text-brandBlue"><i class="fas fa-search"></i></button>
+            </div>
+            <a href="#" class="text-sm font-medium text-gray-600 hover:text-brandBlue hidden sm:block">Log in</a>
+            <a href="#" class="bg-brandBlue text-white px-6 py-2 rounded text-sm font-medium hover:bg-blue-700 transition">Sign up</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-hero-gradient relative pt-20 pb-20 overflow-hidden text-white">
+        <!-- Background Elements -->
+        <div class="absolute top-10 right-20 w-3 h-3 rounded-full bg-pink-400"></div>
+        <div class="absolute bottom-20 left-20 w-3 h-3 rounded-full bg-blue-300"></div>
+        <div class="absolute top-1/3 left-10 w-2 h-2 rounded-full bg-yellow-400"></div>
+        
+        <!-- Arc outline -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-64 border-2 border-white/20 rounded-t-full -mb-32"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-48 border-2 border-white/10 rounded-t-full -mb-24"></div>
+
+        <div class="container mx-auto px-6 lg:px-24 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="max-w-xl">
+                <div class="text-xs font-semibold tracking-wider text-blue-200 mb-4 uppercase">
+                    WORLDCLASS E-LEARNING PLATFORM
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    Good <span class="text-blue-300">coaching</span> is <br>
+                    good teaching & <br>
+                    nothing else.
+                </h1>
+                <p class="text-blue-100 text-sm mb-8 max-w-sm">
+                    In a coaching role, you ask the questions and rely more on your staff.
+                </p>
+                
+                <div class="flex items-center gap-4 mb-10">
+                    <button class="border border-white/50 text-white px-6 py-2.5 rounded hover:bg-white hover:text-brandBlue transition text-sm font-medium">Get Started</button>
+                    <button class="text-white hover:underline text-sm font-medium">Learn More</button>
+                </div>
+
+                <div class="bg-white rounded p-1.5 flex max-w-md shadow-lg">
+                    <input type="text" placeholder="Find course by title or tutor" class="flex-1 px-4 text-gray-700 text-sm focus:outline-none">
+                    <button class="bg-brandBlue text-white px-6 py-2 rounded text-sm font-medium hover:bg-blue-700 transition">Search</button>
+                </div>
+            </div>
+            
+            <div class="relative hidden md:flex justify-end">
+                <div class="relative w-[450px] h-[500px]">
+                    <!-- Soft glow behind the person -->
+                    <div class="absolute inset-0 bg-white/10 blur-3xl rounded-full transform -translate-y-10 scale-110"></div>
+                    <img src="https://i.pinimg.com/736x/06/35/6c/06356c4d2ff7dd16c1bb06079604049a.jpg" alt="Student" class="relative z-10 w-full h-full object-cover object-top drop-shadow-2xl rounded-full">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Brands Strip -->
+    <div class="bg-brands-gradient py-6 border-b border-white/10">
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="flex justify-between items-center opacity-80 overflow-x-auto gap-8">
+                <div class="text-white font-bold text-xl flex items-center gap-2"><i class="fab fa-slack"></i> slack</div>
+                <div class="text-white font-bold text-xl flex items-center gap-2"><i class="fab fa-amazon"></i> amazon</div>
+                <div class="text-white font-bold text-xl flex items-center gap-2"><i class="fab fa-dribbble"></i> dribbble</div>
+                <div class="text-white font-bold text-xl flex items-center gap-2"><i class="fab fa-hubspot"></i> HubSpot</div>
+                <div class="text-white font-bold text-xl flex items-center gap-2"><i class="fab fa-spotify"></i> Spotify</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Course Section -->
+    <section class="py-20 bg-white relative">
+        <!-- Circle outline top left -->
+        <div class="absolute top-20 left-20 w-12 h-12 border-4 border-blue-100 rounded-full"></div>
+
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Featured <span class="text-brandBlue">Course</span></h2>
+                <p class="text-xs text-gray-400 font-semibold tracking-wider uppercase">THE FEATURES IN COURSES PROVE THE INGENIOUS OF YOUR TEACHING STYLES</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Course Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 bg-blue-50 overflow-hidden relative">
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ_Ydskuuc7d3-h52skFAxdzebrfhvhw9EbyvWytBt6k7vUdBxB" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] text-brandBlue font-bold bg-blue-50 px-2 py-1 rounded">Design</span>
+                            <div class="flex text-yellow-400 text-xs gap-1">★★★★★ <span class="text-gray-400 ml-1">4.9</span></div>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900 mb-4 h-10 line-clamp-2">Motion Graphics: Create a Nice Typography Animation</h3>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-6 h-6 rounded-full object-cover">
+                                <span class="text-xs text-gray-500">Alex</span>
+                            </div>
+                            <span class="text-sm font-bold text-brandBlue">Rs. 400</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 bg-purple-50 overflow-hidden relative">
+                        <img src="https://zelt.app/wp-content/uploads/2023/03/getzelt.com-xero-integration-overview-metapic-11.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] text-brandBlue font-bold bg-blue-50 px-2 py-1 rounded">Advance</span>
+                            <div class="flex text-yellow-400 text-xs gap-1">★★★★☆ <span class="text-gray-400 ml-1">4.8</span></div>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900 mb-4 h-10 line-clamp-2">Advance PHP knowledge with JS to make smart web</h3>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-6 h-6 rounded-full object-cover">
+                                <span class="text-xs text-gray-500">Sarah</span>
+                            </div>
+                            <span class="text-sm font-bold text-brandBlue">Rs. 500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 bg-blue-100 overflow-hidden relative">
+                        <img src="data:image/jpeg;base64,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" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] text-brandBlue font-bold bg-blue-50 px-2 py-1 rounded">IT & Software</span>
+                            <div class="flex text-yellow-400 text-xs gap-1">★★★★★ <span class="text-gray-400 ml-1">4.9</span></div>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900 mb-4 h-10 line-clamp-2">The Complete Android 14 Developer Course</h3>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg" class="w-6 h-6 rounded-full object-cover">
+                                <span class="text-xs text-gray-500">Michael</span>
+                            </div>
+                            <span class="text-sm font-bold text-brandBlue">Rs. 500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 4 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 bg-pink-50 overflow-hidden relative">
+                        <img src="https://www.shutterstock.com/image-illustration/coin-stack-on-pink-background-260nw-2095924948.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] text-brandBlue font-bold bg-blue-50 px-2 py-1 rounded">Finance</span>
+                            <div class="flex text-yellow-400 text-xs gap-1">★★★★☆ <span class="text-gray-400 ml-1">4.8</span></div>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900 mb-4 h-10 line-clamp-2">The Complete Personal Finance Masterclass</h3>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="w-6 h-6 rounded-full object-cover">
+                                <span class="text-xs text-gray-500">Emma</span>
+                            </div>
+                            <span class="text-sm font-bold text-brandBlue">Rs. 400</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 5 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 bg-orange-50 overflow-hidden relative">
+                        <img src="https://www.nlbservices.com/wp-content/uploads/2020/05/building-supply-chain-resiliency-in-the-new-normal-1200x900.webp" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] text-brandBlue font-bold bg-blue-50 px-2 py-1 rounded">Marketing</span>
+                            <div class="flex text-yellow-400 text-xs gap-1">★★★★★ <span class="text-gray-400 ml-1">4.9</span></div>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900 mb-4 h-10 line-clamp-2">Marketing 2023: Complete Guide To Instagram Growth</h3>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-6 h-6 rounded-full object-cover">
+                                <span class="text-xs text-gray-500">David</span>
+                            </div>
+                            <span class="text-sm font-bold text-brandBlue">Rs. 500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 6 -->
+                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                    <div class="h-48 bg-green-50 overflow-hidden relative">
+                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRXQCprIsM-GycuN6pf47KisGSrZN1W9SlNB0J3VG-XYRyiK71s" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] text-brandBlue font-bold bg-blue-50 px-2 py-1 rounded">Business</span>
+                            <div class="flex text-yellow-400 text-xs gap-1">★★★★★ <span class="text-gray-400 ml-1">4.9</span></div>
+                        </div>
+                        <h3 class="text-sm font-bold text-gray-900 mb-4 h-10 line-clamp-2">Learn 3D Modeling and Design For Beginners</h3>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div class="flex items-center gap-2">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" class="w-6 h-6 rounded-full object-cover">
+                                <span class="text-xs text-gray-500">Sophia</span>
+                            </div>
+                            <span class="text-sm font-bold text-brandBlue">Rs. 400</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="bg-brandBlue text-white px-8 py-2.5 rounded text-sm font-medium hover:bg-blue-700 transition">View all courses</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Learn With Us -->
+    <section class="bg-feature-gradient py-20 relative overflow-hidden">
+        <!-- Abstract Circles -->
+        <div class="absolute top-1/2 -left-32 transform -translate-y-1/2 w-[400px] h-[400px] border border-white/5 rounded-full"></div>
+        <div class="absolute top-1/2 -left-20 transform -translate-y-1/2 w-[300px] h-[300px] border border-white/10 rounded-full"></div>
+        
+        <div class="container mx-auto px-6 lg:px-24 text-center text-white relative z-10">
+            <h2 class="text-2xl font-bold mb-3">Why <span class="text-blue-300">learn</span> with our courses?</h2>
+            <p class="text-xs text-blue-100 mb-16">WE PROVIDE THE BEST TOOLS TO HELP YOU IN YOUR LEARNING EXPERIENCE.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:divide-x divide-white/20">
+                <div class="px-8 flex flex-col items-center">
+                    <div class="w-16 h-16 border-2 border-white/20 rounded-xl flex items-center justify-center text-2xl mb-4 text-white">
+                        <i class="far fa-play-circle"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-2">HD Video</h3>
+                    <p class="text-[11px] text-blue-100 leading-relaxed">High quality video courses from experienced instructors all over the world.</p>
+                </div>
+                
+                <div class="px-8 flex flex-col items-center">
+                    <div class="w-16 h-16 border-2 border-white/20 rounded-xl flex items-center justify-center text-2xl mb-4 text-white">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-2">100+ Courses</h3>
+                    <p class="text-[11px] text-blue-100 leading-relaxed">Choose from over 100+ high quality courses to learn from experts.</p>
+                </div>
+                
+                <div class="px-8 flex flex-col items-center">
+                    <div class="w-16 h-16 border-2 border-white/20 rounded-xl flex items-center justify-center text-2xl mb-4 text-white">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h3 class="font-bold text-sm mb-2">10+ Years</h3>
+                    <p class="text-[11px] text-blue-100 leading-relaxed">We have been providing high quality courses for more than 10 years.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Categories -->
+    <section class="py-20 bg-brandLight">
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Top <span class="text-brandBlue">Categories</span></h2>
+                <p class="text-xs text-gray-500 uppercase tracking-wider">FIND YOUR DESIRED COURSE TO LEARN</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Category 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-gray-900 mb-1">Digital Marketing</h4>
+                    <p class="text-[10px] text-gray-400">25 Courses</p>
+                </div>
+                <!-- Category 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-teal-100 text-teal-500 rounded flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-gray-900 mb-1">Web Development</h4>
+                    <p class="text-[10px] text-gray-400">18 Courses</p>
+                </div>
+                <!-- Category 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-500 rounded flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-gray-900 mb-1">Art & Humanities</h4>
+                    <p class="text-[10px] text-gray-400">12 Courses</p>
+                </div>
+                <!-- Category 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-500 rounded flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-gray-900 mb-1">Personal Development</h4>
+                    <p class="text-[10px] text-gray-400">30 Courses</p>
+                </div>
+                <!-- Category 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-500 rounded flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-gray-900 mb-1">IT and Software</h4>
+                    <p class="text-[10px] text-gray-400">42 Courses</p>
+                </div>
+                <!-- Category 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-green-100 text-green-500 rounded flex items-center justify-center text-xl mx-auto mb-4">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h4 class="text-xs font-bold text-gray-900 mb-1">Graphic Design</h4>
+                    <p class="text-[10px] text-gray-400">20 Courses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter & Video Section -->
+    <section class="pt-20 bg-white relative">
+        <!-- Floating Newsletter Box -->
+        <div class="container mx-auto px-6 lg:px-24 relative z-20 -mb-16">
+            <div class="bg-newsletter-gradient rounded-xl p-10 text-center text-white shadow-2xl relative overflow-hidden">
+                <!-- Floating Avatars on Newsletter -->
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="absolute top-8 left-12 w-8 h-8 rounded-full border-2 border-white object-cover">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="absolute bottom-10 left-20 w-6 h-6 rounded-full border-2 border-white object-cover">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="absolute top-1/2 right-12 w-10 h-10 rounded-full border-2 border-white object-cover">
+                <img src="https://randomuser.me/api/portraits/men/68.jpg" class="absolute bottom-8 right-24 w-8 h-8 rounded-full border-2 border-white object-cover">
+
+                <h3 class="text-2xl font-bold mb-2">Subscribe For Get Update<br>Every New Courses</h3>
+                <p class="text-xs text-white/80 mb-6">WE SEND YOU THE LATEST OFFERS AND COURSES UPDATE</p>
+                
+                <div class="max-w-md mx-auto bg-white/20 p-1 rounded border border-white/30 flex backdrop-blur-sm">
+                    <input type="email" placeholder="Email Address" class="flex-1 bg-transparent px-4 text-white placeholder-white/80 text-sm focus:outline-none">
+                    <button class="bg-brandBlue text-white px-6 py-2 rounded text-sm font-medium hover:bg-blue-700 transition">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Background Area -->
+        <div class="bg-white pt-24 pb-20 relative z-10">
+            <!-- Decorative shapes -->
+            <div class="absolute left-10 bottom-40 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[25px] border-b-blue-300 transform -rotate-12"></div>
+            <div class="absolute right-20 top-40 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[25px] border-b-blue-500 transform rotate-45"></div>
+            
+            <div class="container mx-auto px-6 lg:px-24">
+                <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover opacity-80">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center text-white border-2 border-white/50 cursor-pointer hover:bg-white/50 transition shadow-lg">
+                            <i class="fas fa-play text-xl ml-1"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Corner graphic design -->
+                    <div class="absolute bottom-0 right-0 w-32 h-32 flex flex-wrap-reverse">
+                        <div class="w-8 h-8 bg-blue-500"></div>
+                        <div class="w-8 h-8 bg-yellow-400"></div>
+                        <div class="w-8 h-8 bg-transparent"></div>
+                        <div class="w-8 h-8 bg-red-500 rounded-tl-full"></div>
+                        
+                        <div class="w-8 h-8 bg-teal-500"></div>
+                        <div class="w-8 h-8 bg-purple-500 rounded-tr-full"></div>
+                        <div class="w-8 h-8 bg-orange-400"></div>
+                        <div class="w-8 h-8 bg-blue-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-brandLight pt-16 pb-40 relative">
+        <!-- Abstract circle -->
+        <div class="absolute left-10 top-10 w-16 h-16 bg-blue-200 rounded-full blur-md opacity-50"></div>
+        <div class="absolute left-10 top-10 w-16 h-16 bg-white rounded-full -translate-x-2 translate-y-2"></div>
+
+        <div class="container mx-auto px-6 lg:px-24 text-center">
+            <h2 class="text-2xl font-bold text-brandBlue mb-2">Testimonials</h2>
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-20">WHAT OUR STUDENTS SAY ABOUT US</p>
+
+            <div class="grid md:grid-cols-3 gap-6 relative z-20 -mb-56">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg relative mt-10 md:mt-0">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm">
+                    <p class="text-[11px] text-gray-500 leading-relaxed mt-4 mb-4">Depend on us to help you bring your ideas to life. Our team has a history of building successful websites and apps.</p>
+                    <div class="text-yellow-400 text-xs">★★★★☆</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg relative transform md:-translate-y-8">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm">
+                    <p class="text-[11px] text-gray-500 leading-relaxed mt-4 mb-4">We are a team of dedicated professionals who want to bring high quality education to everyone in the world.</p>
+                    <div class="text-yellow-400 text-xs">★★★★★</div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg relative mt-10 md:mt-0">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full border-4 border-white object-cover shadow-sm">
+                    <p class="text-[11px] text-gray-500 leading-relaxed mt-4 mb-4">Depend on us to help you bring your ideas to life. Our team has a history of building successful websites and apps.</p>
+                    <div class="text-yellow-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-footer-gradient pt-32 pb-6 text-white relative z-10 mt-16 md:mt-0">
+        <!-- Abstract graphic top right of footer -->
+        <div class="absolute right-10 top-10 flex gap-1 opacity-20">
+            <div class="w-8 h-8 rounded-full border-2 border-white"></div>
+            <div class="w-8 h-8 rounded-full border-2 border-white bg-white"></div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-24">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 border-b border-white/10 pb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="flex">
+                            <div class="w-4 h-4 rounded-full bg-green-300 opacity-80 -mr-1"></div>
+                            <div class="w-4 h-4 rounded-full bg-blue-300 opacity-80"></div>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight">Learner</span>
+                    </div>
+                    <p class="text-xs text-white/70 max-w-xs leading-relaxed mb-6">
+                        We are a team of dedicated professionals who want to bring high quality education to everyone in the world.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-4">Company</h4>
+                    <ul class="space-y-2 text-xs text-white/70">
+                        <li><a href="#" class="hover:text-white transition">About us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Press Center</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-4">Community</h4>
+                    <ul class="space-y-2 text-xs text-white/70">
+                        <li><a href="#" class="hover:text-white transition">Events</a></li>
+                        <li><a href="#" class="hover:text-white transition">Forum</a></li>
+                        <li><a href="#" class="hover:text-white transition">Podcast</a></li>
+                        <li><a href="#" class="hover:text-white transition">Affiliates</a></li>
+                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-sm mb-4">Quick links</h4>
+                    <ul class="space-y-2 text-xs text-white/70">
+                        <li><a href="#" class="hover:text-white transition">Store</a></li>
+                        <li><a href="#" class="hover:text-white transition">Pricing Details</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-brandBlue flex items-center justify-center hover:bg-gray-100 transition"><i class="fab fa-facebook-f text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-blue-400 flex items-center justify-center hover:bg-gray-100 transition"><i class="fab fa-twitter text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-blue-700 flex items-center justify-center hover:bg-gray-100 transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white text-pink-600 flex items-center justify-center hover:bg-gray-100 transition"><i class="fab fa-instagram text-sm"></i></a>
+                </div>
+                <p class="text-xs text-white/50 w-full text-center mt-4">© 2026 Learner. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
